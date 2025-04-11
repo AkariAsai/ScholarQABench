@@ -29,7 +29,7 @@ python -m nltk.downloader punkt_tab
 ### Repository Organizations
 
 - [data](data/): provides relevant data files. 
-    - [scholar_cs](scholar_cs): includes **ScholarQA-CS** (Computer Science) data files
+    - [scholar_cs](data/scholarqa_cs): includes **ScholarQA-CS** (Computer Science) data files
         - `output_snippets.jsonl` : Contains the questions with system responses for eval (and some other metadata used to generate the test cases but not required for subsequent runs). Should not require further modification.
         - `test_configs_snippets.json` : A collection of test cases in json format with associated rubrics for each question. Each question has its own test case and rubrics. Should not require further modification.
         - `qa_metadata_all.jsonl` : Metadata file that was used to bootstrap this utility. Should not require further modification.
