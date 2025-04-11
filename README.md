@@ -129,8 +129,8 @@ Once the prediction json file is ready, save it a new directory run the eval scr
 ```python
 export OPENAI_API_KEY=<openai key>
 python scripts/rubric_eval.py \
-    --qa-dir data/scholar_cs/src_answers \
-    --test-config data/scholar_cs/test_configs_snippets.json \
+    --qa-dir data/scholarqa_cs/src_answers \
+    --test-config data/scholarqa_cs/test_configs_snippets.json \
     --rubrics --snippets \
     --src-names <optional comma separated src names prefixes of prediction files with .jsonl, if not given all the files will be picked>
 ```
