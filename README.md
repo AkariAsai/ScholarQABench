@@ -1,6 +1,6 @@
 # ScholarQABench
 
-This repository contains **ScholarQABench** evaluation script and data, which provides a holistic evaluation platform to test LLMs' abilities of assisting researchers to conduct scientific literature synthesis. This work is from the [OpenScholar](https://github.com/AkariAsai/OpenScholar) project. See details in [our manuscript](https://openscholar.allen.ai/paper). 
+This repository contains **ScholarQABench** evaluation script and data, which provides a holistic evaluation platform to test LLMs' abilities to assist researchers to conduct scientific literature synthesis. This work is from the [OpenScholar](https://github.com/AkariAsai/OpenScholar) project. See details in [our manuscript](https://openscholar.allen.ai/paper). 
 
 ![scholar bench overview](scholarqabench.png)
 
@@ -84,12 +84,12 @@ python citation_correctness_eval.py --f PATH_TO_YOUR_PREDICTION_FILE --citations
 #### Long-form generation (QASA, ScholarQA-*)
 
 ```
-python citation_correctness_eval.py --f PATH_TO_YOUR_PREDICTION_FILE --citations_long
+python citation_correctness_eval.py --f PATH_TO_YOUR_PREDICTION_FILE --citations
 ```
 
 
 ### String-based Correctness (SciFact, PubmedQA, QASA)
-To run string based evaluations, run the following commands:
+To run string matching based evaluations, run the following commands:
 
 #### SciFact and PubMedQA (accuracy)
 
@@ -114,14 +114,6 @@ A jsonl file with fields `case_id` and `answer_text` (See [example file](https:/
 - `case_id` corresponds to the identifier of the question for which the response is to be evaluated, map the question text with the case_id in `test_configs_snippets.json`
 - `answer_text` is the system answer (along with citations and excerpts, if applicable) in plain text
 
-We provide an answer conversion script, [`convert_answer_nora.py`](scripts/convert_answer_nora.py), which convert the original answer file to the expected format. 
-
-```
-python scripts/convert_answer_nora.py \
-    --pred_file YOUR_PRED_FILE_NAME \
-    --data_file data/scholar_cs/test_configs_snippets.json \
-    --output_file scholar_cs/src_answers/CONVERTED_OUTPUT_FILE_NAME
-```
 
 ##### Run evaluation 
 Once the prediction json file is ready, save it a new directory run the eval script as follows (You can save as many system response files under a directory, they will be picked together for eval):
@@ -132,11 +124,11 @@ python scripts/rubric_eval.py \
     --qa-dir data/scholarqa_cs/src_answers \
     --test-config data/scholarqa_cs/test_configs_snippets.json \
     --rubrics --snippets \
-    --src-names <optional comma separated src names prefixes of prediction files with .jsonl, if not given all the files will be picked>
+    --src-names <optional comma-separated src names prefixes of prediction files with .jsonl, if not given all the files will be picked>
 ```
 **Note:** To evaluate only using rubrics, remove `--snippets` parameter and vice-versa to use only snippets. 
 
-**Acknowledgements:** The original code of the ScholarQA-CS are available at [allenai/multidoc_qa_eval](https://github.com/allenai/multidoc_qa_eval).
+**Acknowledgements:** The original code of ScholarQA-CS is available at [allenai/multidoc_qa_eval](https://github.com/allenai/multidoc_qa_eval).
 
 ### Prometheus for Coverage, Relevance and Organization (ScholarQA-CS)
 
