@@ -77,14 +77,14 @@ Your answer files for all tasks are expected to format in the following way (`js
 #### Short-form generation (SciFact, PubMedQA)
 
 ```
-python citation_correctness_eval.py --f PATH_TO_YOUR_PREDICTION_FILE --citations_short
+python scripts/citation_correctness_eval.py --f PATH_TO_YOUR_PREDICTION_FILE --citations_short
 ```
 
 
 #### Long-form generation (QASA, ScholarQA-*)
 
 ```
-python citation_correctness_eval.py --f PATH_TO_YOUR_PREDICTION_FILE --citations
+python scripts/citation_correctness_eval.py --f PATH_TO_YOUR_PREDICTION_FILE --citations
 ```
 
 
@@ -94,13 +94,13 @@ To run string matching based evaluations, run the following commands:
 #### SciFact and PubMedQA (accuracy)
 
 ```
-python citation_correctness_eval.py --f PATH_TO_YOUR_PREDICTION_FILE --match
+python scripts/citation_correctness_eval.py --f PATH_TO_YOUR_PREDICTION_FILE --match
 ```
 
 #### QASA (ROUGE-L)
 
 ```
-python citation_correctness_eval.py --f PATH_TO_YOUR_PREDICTION_FILE
+python scripts/citation_correctness_eval.py --f PATH_TO_YOUR_PREDICTION_FILE
 ```
 
 
@@ -143,8 +143,8 @@ python scripts/prometheus_eval.py \
     --model prometheus-eval/prometheus-7b-v2.0 \
     --load_vllm \
     --top_n 10 \
-    -f data/scholar_multi/human_answers.json \
-    --aspects organization coverage
+    -f data/scholarqa_multi/human_answers.json \
+    --aspects organization coverage relevance
 ```
 
 #### Relevance 
