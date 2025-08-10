@@ -140,7 +140,7 @@ python scripts/prometheus_eval.py \
     --output_path OUTPUT_DIR_NAME \
     --rubric_path rubrics/prometheus_rubrics_v8.json \
     --instruction "Answer the question related to the most recent scientific literature." \
-    --model prometheus-eval/prometheus-7b-v2.0 \
+    --model prometheus-eval/prometheus-bgb-8x7b-v2.0 \
     --load_vllm \
     --top_n 10 \
     -f data/scholarqa_multi/human_answers.json \
@@ -156,7 +156,7 @@ python scripts/prometheus_eval.py \
     --output_path OUTPUT_DIR_NAME \
     --rubric_path rubrics/prometheus_rubrics_v8.json \
     --instruction "Answer the question related to the most recent scientific literature." \
-    --model prometheus-eval/prometheus-bgb-8x7b-v2.0 \
+    --model prometheus-eval/prometheus-8x7b-v2.0 \
     --load_vllm \
     --top_n 10 \
     -f data/scholar_multi/human_answers.json \
