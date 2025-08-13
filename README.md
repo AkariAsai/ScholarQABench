@@ -4,16 +4,13 @@ This repository contains **ScholarQABench** evaluation script and data, which pr
 
 ![scholar bench overview](scholarqabench.png)
 
-**Change logs** 
-
-- November 19 2024: Initial release. 
-
 **Table of Contents**
 
 1. [Overview and Installation](#overview-and-installation)
 2. [Evaluations](#evaluations)
 3. [License](#license)
-4. [Citations](#citations)
+4. [Note](#notes)
+5. [Citations](#citations)
 
 
 ## Overview and Installation
@@ -168,6 +165,8 @@ The aggregate test cases, sample system answers under `data/src_answers` and oth
 By downloading this data you acknowledge that you have read and agreed to all the terms in this license.
 For constituent datasets, also go through the individual licensing requirements, as applicable. 
 
+## Notes 
+- The reference rubrics and expert-written answers were created by domain experts between July and September 2024. While we do not discourage the use of retrieval systems that surface papers published after this period, please note that such systems may access information unavailable to the original annotators, potentially affecting comparability with the provided references.
 
 ## Citations
 ```
